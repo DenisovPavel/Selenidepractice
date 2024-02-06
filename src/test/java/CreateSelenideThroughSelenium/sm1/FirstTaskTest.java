@@ -16,9 +16,7 @@ public class FirstTaskTest extends AbstractTest {
         SelenideElement buttonNew = Selenide.$x("//*[@class='mdc-button__label']");
         loginNew.sendKeys(login);
         passwordNew.sendKeys(password);
-        Thread.sleep(5000L);
         buttonNew.shouldBe(visible).click();
-
         SelenideElement searchList = Selenide.$x("//div[@class='mdc-menu mdc-menu-surface']/..");
         Assertions.assertEquals("Hello, OOlega", searchList.getText());
     }
