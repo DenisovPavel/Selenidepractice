@@ -13,12 +13,12 @@ public class RemakeNamePage {
     private final SelenideElement elementProfileButton = $x("//ul[@class='mdc-deprecated-list']/li");
 
     public void openFirstDummyCardAndSaveNewName(String name) throws InterruptedException {
-        elementFirstDummyCard.shouldBe(visible).click();              // кликнули на первую карточку и открыли
+        elementFirstDummyCard.shouldBe(visible).click();
         Thread.sleep(5000L);
-        elementDummyEditPostButton.shouldBe(visible).click();     // кликнули на кнопку для изменения имени
-        elementFieldToTitle.clear();            // очистили поле имени
-        elementFieldToTitle.sendKeys(name);     // добавили новое имя
-        elementButtonSave.click();              // сохранили
+        elementDummyEditPostButton.shouldBe(visible).click();
+        elementFieldToTitle.clear();
+        elementFieldToTitle.sendKeys(name);
+        elementButtonSave.click();
     }
 
     public void openProfile() throws InterruptedException {

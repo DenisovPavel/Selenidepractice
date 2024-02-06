@@ -1,32 +1,28 @@
 package CreateSelenideThroughSelenium.sm1;
 
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class AbstractTest {
-    static WebDriver driver;
     String login = "OOlega";
     String password = "8b8ea6e167";
-    private static WebDriverWait wait;
+
 
     @BeforeEach
     void init() {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--start-maximized"); // режим полного экрана
-        driver = new ChromeDriver(chromeOptions);
-        driver.get("https://test-stand.gb.ru/login");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    }
+        Configuration.browser = "chrome";
+        Configuration.browserSize = "1920x1080";
+//        Configuration.browserVersion = "121.0.6167.86";//опционально;
+        Configuration.headless = false;
+        Selenide.open("https://test-stand.gb.ru/login");
+        Configuration.pageLoadTimeout = 5000;
 
+    }
     @AfterEach
     void close() {
-        driver.quit();
+        Selenide.closeWebDriver();
     }
 }
 

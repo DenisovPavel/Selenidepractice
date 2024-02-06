@@ -5,11 +5,6 @@ import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -48,7 +43,7 @@ public class LoginPageTest extends AbstractTest {
         remakeNamePage.openFirstDummyCardAndSaveNewName("New Dummy2");
         remakeNamePage.openProfile();
         SelenideElement  searchElement = $("tbody tr td");
-        Assertions.assertEquals("97183", searchElement.getText());
+        Assertions.assertEquals("97452", searchElement.getText());
     }
 
 

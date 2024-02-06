@@ -1,9 +1,7 @@
 package CreateSelenideThroughSelenium.sm2;
 
-
 import com.codeborne.selenide.ElementsCollection;
 import static com.codeborne.selenide.Selenide.$$x;
-
 /**
  * @params ElementPage - отдельный случай PageObject;
  */
